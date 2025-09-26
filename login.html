@@ -1,0 +1,91 @@
+<!DOCTYPE html> <!-- Define el documento como HTML5 -->
+<html lang="es"> <!-- Elemento raíz con idioma español -->
+<head> <!-- Sección de metadatos del documento -->
+    <meta charset="UTF-8"> <!-- Codificación UTF-8 para caracteres especiales -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Configuración responsive para móviles -->
+    <meta name="description" content="Inicia sesión en GastoControl para acceder a tu panel de control de gastos"> <!-- Descripción para SEO -->
+    <title>Iniciar Sesión - GastoControl</title> <!-- Título que aparece en la pestaña del navegador -->
+    <link rel="stylesheet" href="css/login.css"> <!-- Enlaza la hoja de estilos específica del login -->
+</head>
+<script src="js/login.js"></script>
+<body> <!-- Cuerpo principal del documento -->
+    <div class="container"> <!-- Contenedor principal que centra el contenido -->
+        <header> <!-- Encabezado semántico de la página -->
+            <nav class="navbar"> <!-- Barra de navegación superior -->
+                <div class="logo"> <!-- Contenedor del logotipo -->
+                    <a href="index.html">GastoControl</a> <!-- Enlace al inicio con el nombre de la app -->
+                </div>
+                <div class="nav-links"> <!-- Enlaces de navegación -->
+                    <a href="register.html" class="btn-nav">Registrarse</a> <!-- Enlace al formulario de registro -->
+                </div>
+            </nav>
+        </header>
+        
+        <main> <!-- Contenido principal de la página -->
+            <div class="login-container"> <!-- Contenedor específico para el formulario de login -->
+                <div class="login-card"> <!-- Tarjeta que contiene el formulario -->
+                    <div class="card-header"> <!-- Encabezado de la tarjeta -->
+                        <h1>Iniciar Sesión</h1> <!-- Título principal de la página -->
+                        <p>Accede a tu panel de control de gastos</p> <!-- Subtítulo explicativo -->
+                    </div>
+                    
+                    <form id="loginForm" action="#" method="POST" novalidate> <!-- Formulario de login (cambiar action por endpoint real) -->
+                        <div class="form-group"> <!-- Contenedor para el campo de email -->
+                            <label for="email">Correo Electrónico</label> <!-- Etiqueta asociada al input de email -->
+                           <input type="email" id="email" name="email" required aria-required="true" placeholder="ejemplo@correo.com" autocomplete="email">
+                            <!-- Contenedor para el campo de email  <input 
+                              <--  type="email"  Tipo email para validación automática del navegador -->
+                                <!-- id="email"  Identificador único del elemento -->
+                                <!--name="email"  Nombre del campo para envío al servidor -->
+                                <!--required  Campo obligatorio -->
+                                <!--aria-required="true"  Atributo de accesibilidad para lectores de pantalla -->
+                                <!--placeholder="ejemplo@correo.com"  Texto de ayuda dentro del input -->
+                                <!--autocomplete="email"  Ayuda al navegador a autocompletar -->
+                            <!-- > 
+                          
+                        </div>
+                        
+                        <div class="form-group"> <!-- Contenedor para el campo de contraseña -->
+                            <label for="password">Contraseña</label> <!-- Etiqueta asociada al input de contraseña -->
+                            <!-- Campo Password -->
+                            <input type="password" id="password" name="password" required aria-required="true" minlength="8" placeholder="Mínimo 8 caracteres" autocomplete="current-password">
+                            <!-- <input 
+                            <-- type="password" Tipo password para ocultar el texto 
+                            <-- id="password"  Identificador único del elemento -->
+                            <!-- name="password"  Nombre del campo para envío al servidor 
+                            <-- required  Campo obligatorio -->
+                            <!-- aria-required="true"  Atributo de accesibilidad -->
+                            <!-- minlength="8"  Longitud mínima de 8 caracteres -->
+                            <!-- placeholder="Mínimo 8 caracteres"  Texto de ayuda dentro del input -->
+                            <!-- autocomplete="current-password"  Ayuda al navegador para autocompletar contraseñas -->
+                            <!-- >
+                        </div>
+                        
+                        <div class="form-options"> <!-- Contenedor para opciones adicionales -->
+                            <div class="checkbox-group"> <!-- Grupo de checkbox -->
+                                <input type="checkbox" id="remember" name="remember"> <!-- Checkbox para recordar sesión -->
+                                <label for="remember">Recordar mi sesión</label> <!-- Etiqueta del checkbox -->
+                            </div>
+                            <a href="#" class="forgot-password">¿Olvidaste tu contraseña?</a> <!-- Enlace para recuperar contraseña -->
+                        </div>
+                        
+                        <div class="form-group"> <!-- Contenedor para el botón de envío -->
+                            <button type="submit" class="btn-primary">Iniciar Sesión</button> <!-- Botón para enviar el formulario -->
+                        </div>
+                    </form>
+                    
+                    <div class="card-footer"> <!-- Pie de la tarjeta -->
+                        <p>¿No tienes cuenta? <a href="register.html">Regístrate gratis</a></p> <!-- Enlace a la página de registro -->
+                    </div>
+                </div>
+            </div>
+        </main>
+        
+        <footer> <!-- Pie de página semántico -->
+            <div class="footer-content"> <!-- Contenido del pie de página -->
+                <p>&copy; 2024 GastoControl. Todos los derechos reservados.</p> <!-- Copyright de la aplicación -->
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

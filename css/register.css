@@ -1,0 +1,387 @@
+/* Variables CSS para colores y espaciados reutilizables */
+:root {
+    --primary-color: #4f46e5; /* Color primario principal azul índigo */
+    --primary-hover: #4338ca; /* Color primario más oscuro para hover */
+    --secondary-color: #64748b; /* Color secundario gris azulado */
+    --text-dark: #1f2937; /* Color de texto principal oscuro */
+    --text-light: #6b7280; /* Color de texto secundario más claro */
+    --background: #ffffff; /* Color de fondo blanco */
+    --card-background: #f8fafc; /* Color de fondo para tarjetas */
+    --border-color: #e2e8f0; /* Color de bordes */
+    --error-color: #dc2626; /* Color rojo para errores */
+    --success-color: #059669; /* Color verde para éxito */
+    --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); /* Sombra estándar */
+    --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1); /* Sombra más grande */
+    --radius: 0.75rem; /* Radio de borde estándar */
+    --spacing-xs: 0.5rem; /* Espaciado extra pequeño */
+    --spacing-sm: 1rem; /* Espaciado pequeño */
+    --spacing-md: 1.5rem; /* Espaciado medio */
+    --spacing-lg: 2rem; /* Espaciado grande */
+    --spacing-xl: 3rem; /* Espaciado extra grande */
+}
+
+/* Reset básico y configuración global */
+* {
+    margin: 0; /* Elimina márgenes por defecto */
+    padding: 0; /* Elimina padding por defecto */
+    box-sizing: border-box; /* Incluye padding y border en el ancho total */
+}
+
+/* Configuración del body principal */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; /* Fuentes del sistema para mejor rendimiento */
+    line-height: 1.6; /* Altura de línea para mejor legibilidad */
+    color: var(--text-dark); /* Color de texto principal */
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); /* Gradiente de fondo atractivo */
+    min-height: 100vh; /* Altura mínima de viewport completo */
+}
+
+/* Contenedor principal que centra todo */
+.container {
+    max-width: 1200px; /* Ancho máximo del contenedor */
+    margin: 0 auto; /* Centrado horizontal */
+    background: var(--background); /* Fondo blanco para el contenido */
+    min-height: 100vh; /* Altura mínima completa */
+    box-shadow: var(--shadow-lg); /* Sombra lateral para destacar */
+}
+
+/* Estilos de la barra de navegación */
+.navbar {
+    display: flex; /* Layout flexible */
+    justify-content: space-between; /* Espacia elementos a los extremos */
+    align-items: center; /* Alinea verticalmente al centro */
+    padding: var(--spacing-sm) var(--spacing-lg); /* Padding interno */
+    background: var(--background); /* Fondo blanco */
+    border-bottom: 1px solid var(--border-color); /* Borde inferior sutil */
+}
+
+/* Estilo del logotipo */
+.logo a {
+    color: var(--primary-color); /* Color primario para el logo */
+    font-weight: 700; /* Peso de fuente grueso */
+    font-size: 1.5rem; /* Tamaño de fuente del logo */
+    text-decoration: none; /* Elimina subrayado del enlace */
+}
+
+/* Contenedor de enlaces de navegación */
+.nav-links {
+    display: flex; /* Layout flexible */
+    gap: var(--spacing-sm); /* Espacio entre enlaces */
+    align-items: center; /* Alineación vertical central */
+}
+
+/* Estilos para botones de navegación */
+.btn-nav {
+    padding: var(--spacing-xs) var(--spacing-sm); /* Padding interno del botón */
+    text-decoration: none; /* Elimina subrayado de enlace */
+    border-radius: var(--radius); /* Bordes redondeados */
+    font-weight: 500; /* Peso de fuente medio */
+    transition: all 0.3s ease; /* Transición suave para cambios */
+    color: var(--text-dark); /* Color de texto */
+    border: 1px solid var(--border-color); /* Borde sutil */
+}
+
+/* Efecto hover para botones de navegación */
+.btn-nav:hover {
+    background: var(--card-background); /* Fondo claro al hacer hover */
+    transform: translateY(-1px); /* Efecto de elevación ligero */
+}
+
+/* Contenedor principal del formulario de registro */
+.register-container {
+    display: flex; /* Layout flexible */
+    align-items: center; /* Centrado vertical */
+    justify-content: center; /* Centrado horizontal */
+    min-height: calc(100vh - 120px); /* Altura completa menos header y footer */
+    padding: var(--spacing-lg); /* Padding alrededor del contenedor */
+}
+
+/* Tarjeta principal del registro */
+.register-card {
+    background: var(--background); /* Fondo blanco */
+    border-radius: var(--radius); /* Bordes redondeados */
+    box-shadow: var(--shadow-lg); /* Sombra grande para destacar */
+    padding: var(--spacing-xl); /* Padding interno generoso */
+    width: 100%; /* Ancho completo disponible */
+    max-width: 500px; /* Ancho máximo más grande que login para más campos */
+}
+
+/* Encabezado de la tarjeta */
+.card-header {
+    text-align: center; /* Texto centrado */
+    margin-bottom: var(--spacing-lg); /* Margen inferior */
+}
+
+/* Título principal del formulario */
+.card-header h1 {
+    font-size: 2rem; /* Tamaño de fuente grande */
+    font-weight: 700; /* Peso grueso */
+    color: var(--text-dark); /* Color de texto principal */
+    margin-bottom: var(--spacing-xs); /* Margen inferior pequeño */
+}
+
+/* Subtítulo del formulario */
+.card-header p {
+    color: var(--text-light); /* Color de texto más claro */
+    font-size: 1rem; /* Tamaño de fuente normal */
+}
+
+/* Grupos de campos del formulario */
+.form-group {
+    margin-bottom: var(--spacing-md); /* Margen inferior entre campos */
+}
+
+/* Fila de formulario para campos lado a lado */
+.form-row {
+    display: flex; /* Layout flexible */
+    gap: var(--spacing-sm); /* Espacio entre campos */
+    margin-bottom: var(--spacing-md); /* Margen inferior */
+}
+
+/* Campos dentro de filas ocupan espacio igual */
+.form-row .form-group {
+    flex: 1; /* Crecimiento flexible igual */
+    margin-bottom: 0; /* Sin margen inferior en filas */
+}
+
+/* Etiquetas de los campos */
+.form-group label {
+    display: block; /* Ocupa toda la línea */
+    font-weight: 500; /* Peso de fuente medio */
+    margin-bottom: var(--spacing-xs); /* Margen inferior pequeño */
+    color: var(--text-dark); /* Color de texto principal */
+    font-size: 0.9rem; /* Tamaño de fuente ligeramente menor */
+}
+
+/* Campos de entrada (inputs) */
+.form-group input,
+.form-group select {
+    width: 100%; /* Ancho completo */
+    padding: var(--spacing-sm); /* Padding interno */
+    border: 2px solid var(--border-color); /* Borde con color definido */
+    border-radius: var(--radius); /* Bordes redondeados */
+    font-size: 1rem; /* Tamaño de fuente normal */
+    transition: all 0.3s ease; /* Transición suave para cambios */
+    background: var(--background); /* Fondo blanco */
+}
+
+/* Estado focus de los inputs */
+.form-group input:focus,
+.form-group select:focus {
+    outline: none; /* Elimina outline por defecto */
+    border-color: var(--primary-color); /* Borde azul al enfocar */
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1); /* Sombra azul sutil */
+}
+
+/* Placeholder de los inputs */
+.form-group input::placeholder {
+    color: var(--text-light); /* Color claro para placeholder */
+    opacity: 0.7; /* Ligeramente transparente */
+}
+
+/* Grupo de checkbox especial */
+.checkbox-group {
+    display: flex; /* Layout flexible */
+    align-items: flex-start; /* Alineación al inicio para texto multilínea */
+    gap: var(--spacing-xs); /* Espacio entre checkbox y label */
+    margin-bottom: var(--spacing-md); /* Margen inferior */
+}
+
+/* Estilo del checkbox */
+.checkbox-group input[type="checkbox"] {
+    width: auto; /* Ancho automático para checkbox */
+    margin: 0; /* Sin margen */
+    margin-top: 3px; /* Pequeño ajuste para alinear con primera línea de texto */
+    accent-color: var(--primary-color); /* Color del checkbox */
+    min-width: 16px; /* Ancho mínimo para que sea clickeable */
+}
+
+/* Label del checkbox */
+.checkbox-group label {
+    margin: 0; /* Sin margen */
+    font-size: 0.9rem; /* Tamaño de fuente pequeño */
+    font-weight: 400; /* Peso de fuente normal */
+    line-height: 1.4; /* Altura de línea para texto multilínea */
+}
+
+/* Enlaces dentro de labels de checkbox */
+.checkbox-group a {
+    color: var(--primary-color); /* Color primario */
+    text-decoration: none; /* Sin subrayado por defecto */
+    transition: color 0.3s ease; /* Transición suave */
+}
+
+/* Efecto hover para enlaces en checkbox */
+.checkbox-group a:hover {
+    color: var(--primary-hover); /* Color más oscuro al hacer hover */
+    text-decoration: underline; /* Subrayado al hacer hover */
+}
+
+/* Botón primario del formulario */
+.btn-primary {
+    width: 100%; /* Ancho completo */
+    padding: var(--spacing-sm); /* Padding interno */
+    background: var(--primary-color); /* Fondo con color primario */
+    color: white; /* Texto blanco */
+    border: none; /* Sin borde */
+    border-radius: var(--radius); /* Bordes redondeados */
+    font-size: 1rem; /* Tamaño de fuente normal */
+    font-weight: 600; /* Peso de fuente semi-grueso */
+    cursor: pointer; /* Cursor de puntero */
+    transition: all 0.3s ease; /* Transición suave */
+}
+
+/* Efecto hover para botón primario */
+.btn-primary:hover {
+    background: var(--primary-hover); /* Color más oscuro al hacer hover */
+    transform: translateY(-1px); /* Efecto de elevación */
+    box-shadow: var(--shadow); /* Sombra para profundidad */
+}
+
+/* Estado activo del botón */
+.btn-primary:active {
+    transform: translateY(0); /* Vuelve a posición normal al hacer clic */
+}
+
+/* Estado deshabilitado del botón */
+.btn-primary:disabled {
+    background: var(--secondary-color); /* Color gris para deshabilitado */
+    cursor: not-allowed; /* Cursor de no permitido */
+    transform: none; /* Sin transformación */
+}
+
+/* Pie de la tarjeta */
+.card-footer {
+    text-align: center; /* Texto centrado */
+    margin-top: var(--spacing-lg); /* Margen superior */
+    padding-top: var(--spacing-md); /* Padding superior */
+    border-top: 1px solid var(--border-color); /* Borde superior sutil */
+}
+
+/* Párrafo del pie de tarjeta */
+.card-footer p {
+    color: var(--text-light); /* Color de texto claro */
+    font-size: 0.9rem; /* Tamaño de fuente pequeño */
+}
+
+/* Enlaces en el pie de tarjeta */
+.card-footer a {
+    color: var(--primary-color); /* Color primario */
+    text-decoration: none; /* Sin subrayado */
+    font-weight: 500; /* Peso de fuente medio */
+    transition: color 0.3s ease; /* Transición suave */
+}
+
+/* Efecto hover para enlaces del pie */
+.card-footer a:hover {
+    color: var(--primary-hover); /* Color más oscuro al hacer hover */
+    text-decoration: underline; /* Subrayado al hacer hover */
+}
+
+/* Estilos del footer */
+footer {
+    background: var(--card-background); /* Fondo de tarjeta */
+    border-top: 1px solid var(--border-color); /* Borde superior */
+    padding: var(--spacing-lg); /* Padding interno */
+    margin-top: auto; /* Margen superior automático para empujar al fondo */
+}
+
+/* Contenido del footer */
+.footer-content {
+    text-align: center; /* Texto centrado */
+    color: var(--text-light); /* Color de texto claro */
+    font-size: 0.9rem; /* Tamaño de fuente pequeño */
+}
+
+/* Media queries para tablets */
+@media (max-width: 768px) {
+    /* Fila se convierte en columna en tablets */
+    .form-row {
+        flex-direction: column; /* Dirección de columna */
+        gap: 0; /* Sin espacio entre elementos en columna */
+    }
+    
+    /* Campos en fila recuperan su margen inferior */
+    .form-row .form-group {
+        margin-bottom: var(--spacing-md); /* Margen inferior restaurado */
+    }
+}
+
+/* Media queries para dispositivos móviles */
+@media (max-width: 600px) {
+    /* Ajuste del contenedor de registro para móviles */
+    .register-container {
+        padding: var(--spacing-sm); /* Padding reducido */
+        min-height: calc(100vh - 100px); /* Altura ajustada para móviles */
+    }
+    
+    /* Ajuste de padding de la tarjeta */
+    .register-card {
+        padding: var(--spacing-lg); /* Padding reducido */
+    }
+    
+    /* Título más pequeño en móviles */
+    .card-header h1 {
+        font-size: 1.75rem; /* Tamaño de fuente reducido */
+    }
+    
+    /* Navbar más compacto en móviles */
+    .navbar {
+        padding: var(--spacing-xs) var(--spacing-sm); /* Padding reducido */
+    }
+    
+    /* Logo más pequeño */
+    .logo a {
+        font-size: 1.25rem; /* Tamaño de fuente reducido */
+    }
+    
+    /* Checkbox con mejor espaciado en móviles */
+    .checkbox-group {
+        align-items: flex-start; /* Asegura alineación al inicio */
+        gap: var(--spacing-sm); /* Espacio mayor en móviles */
+    }
+}
+
+/* Media queries para pantallas muy pequeñas */
+@media (max-width: 400px) {
+    /* Tarjeta ocupa casi toda la pantalla */
+    .register-card {
+        margin: var(--spacing-xs); /* Margen mínimo */
+        padding: var(--spacing-md); /* Padding más reducido */
+    }
+    
+    /* Inputs con padding reducido */
+    .form-group input,
+    .form-group select {
+        padding: var(--spacing-xs); /* Padding interno reducido */
+    }
+    
+    /* Botón con padding reducido */
+    .btn-primary {
+        padding: var(--spacing-xs); /* Padding interno reducido */
+    }
+    
+    /* Labels con texto más pequeño */
+    .form-group label {
+        font-size: 0.85rem; /* Tamaño de fuente más pequeño */
+    }
+}
+
+/* Estilos adicionales para validación visual */
+.form-group input:valid {
+    border-color: var(--success-color); /* Borde verde para campos válidos */
+}
+
+/* Estilos para campos con error */
+.form-group input:invalid {
+    border-color: var(--error-color); /* Borde rojo para campos inválidos */
+}
+
+/* Estados de focus para campos válidos e inválidos */
+.form-group input:valid:focus {
+    box-shadow: 0 0 0 3px rgba(5, 150, 105, 0.1); /* Sombra verde para válidos */
+}
+
+.form-group input:invalid:focus {
+    box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.1); /* Sombra roja para inválidos */
+}

@@ -1,0 +1,540 @@
+/* Variables CSS para colores y espaciados reutilizables */
+:root {
+    --primary-color: #4f46e5; /* Color primario principal azul índigo */
+    --primary-hover: #4338ca; /* Color primario más oscuro para hover */
+    --secondary-color: #64748b; /* Color secundario gris azulado */
+    --text-dark: #1f2937; /* Color de texto principal oscuro */
+    --text-light: #6b7280; /* Color de texto secundario más claro */
+    --background: #ffffff; /* Color de fondo blanco */
+    --card-background: #f8fafc; /* Color de fondo para tarjetas */
+    --border-color: #e2e8f0; /* Color de bordes */
+    --error-color: #dc2626; /* Color rojo para errores */
+    --success-color: #059669; /* Color verde para éxito */
+    --warning-color: #d97706; /* Color naranja para advertencias */
+    --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); /* Sombra estándar */
+    --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1); /* Sombra más grande */
+    --radius: 0.75rem; /* Radio de borde estándar */
+    --spacing-xs: 0.5rem; /* Espaciado extra pequeño */
+    --spacing-sm: 1rem; /* Espaciado pequeño */
+    --spacing-md: 1.5rem; /* Espaciado medio */
+    --spacing-lg: 2rem; /* Espaciado grande */
+    --spacing-xl: 3rem; /* Espaciado extra grande */
+}
+
+/* Reset básico y configuración global */
+* {
+    margin: 0; /* Elimina márgenes por defecto */
+    padding: 0; /* Elimina padding por defecto */
+    box-sizing: border-box; /* Incluye padding y border en el ancho total */
+}
+
+/* Configuración del body principal */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; /* Fuentes del sistema para mejor rendimiento */
+    line-height: 1.6; /* Altura de línea para mejor legibilidad */
+    color: var(--text-dark); /* Color de texto principal */
+    background: var(--card-background); /* Fondo claro para el dashboard */
+    min-height: 100vh; /* Altura mínima de viewport completo */
+}
+
+/* Contenedor principal que centra todo */
+.container {
+    max-width: 1400px; /* Ancho máximo mayor para dashboard */
+    margin: 0 auto; /* Centrado horizontal */
+    background: var(--background); /* Fondo blanco para el contenido */
+    min-height: 100vh; /* Altura mínima completa */
+    box-shadow: var(--shadow-lg); /* Sombra lateral para destacar */
+}
+
+/* Estilos de la barra de navegación */
+.navbar {
+    display: flex; /* Layout flexible */
+    justify-content: space-between; /* Espacia elementos a los extremos */
+    align-items: center; /* Alinea verticalmente al centro */
+    padding: var(--spacing-sm) var(--spacing-lg); /* Padding interno */
+    background: var(--background); /* Fondo blanco */
+    border-bottom: 1px solid var(--border-color); /* Borde inferior sutil */
+    box-shadow: var(--shadow); /* Sombra sutil para separar */
+}
+
+/* Estilo del logotipo */
+.logo a {
+    color: var(--primary-color); /* Color primario para el logo */
+    font-weight: 700; /* Peso de fuente grueso */
+    font-size: 1.5rem; /* Tamaño de fuente del logo */
+    text-decoration: none; /* Elimina subrayado del enlace */
+}
+
+/* Contenedor de enlaces de navegación */
+.nav-links {
+    display: flex; /* Layout flexible */
+    gap: var(--spacing-sm); /* Espacio entre enlaces */
+    align-items: center; /* Alineación vertical central */
+}
+
+/* Saludo del usuario */
+.user-greeting {
+    color: var(--text-dark); /* Color de texto principal */
+    font-weight: 500; /* Peso de fuente medio */
+    margin-right: var(--spacing-sm); /* Margen derecho */
+}
+
+/* Estilos para botones de navegación */
+.btn-nav {
+    padding: var(--spacing-xs) var(--spacing-sm); /* Padding interno del botón */
+    text-decoration: none; /* Elimina subrayado de enlace */
+    border-radius: var(--radius); /* Bordes redondeados */
+    font-weight: 500; /* Peso de fuente medio */
+    transition: all 0.3s ease; /* Transición suave para cambios */
+    color: var(--text-dark); /* Color de texto */
+    border: 1px solid var(--border-color); /* Borde sutil */
+}
+
+/* Efecto hover para botones de navegación */
+.btn-nav:hover {
+    background: var(--card-background); /* Fondo claro al hacer hover */
+    transform: translateY(-1px); /* Efecto de elevación ligero */
+}
+
+/* Contenedor principal del dashboard */
+.dashboard {
+    padding: var(--spacing-lg); /* Padding alrededor del dashboard */
+    background: var(--card-background); /* Fondo claro */
+}
+
+/* Encabezado del dashboard */
+.dashboard-header {
+    text-align: center; /* Texto centrado */
+    margin-bottom: var(--spacing-xl); /* Margen inferior grande */
+}
+
+/* Título principal del dashboard */
+.dashboard-header h1 {
+    font-size: 2.5rem; /* Tamaño de fuente grande */
+    font-weight: 700; /* Peso grueso */
+    color: var(--text-dark); /* Color de texto principal */
+    margin-bottom: var(--spacing-xs); /* Margen inferior pequeño */
+}
+
+/* Subtítulo del dashboard */
+.dashboard-header p {
+    color: var(--text-light); /* Color de texto más claro */
+    font-size: 1.1rem; /* Tamaño de fuente ligeramente mayor */
+}
+
+/* Grid principal del dashboard */
+.dashboard-grid {
+    display: grid; /* Layout de grilla */
+    grid-template-columns: 1fr 300px; /* Columna principal y sidebar */
+    grid-template-rows: auto auto; /* Filas automáticas */
+    gap: var(--spacing-lg); /* Espacio entre elementos del grid */
+    grid-template-areas: /* Define áreas del grid */
+        "form summary"
+        "list list";
+}
+
+/* Posicionamiento de secciones en el grid */
+.expense-form-section {
+    grid-area: form; /* Área del formulario */
+}
+
+.summary-section {
+    grid-area: summary; /* Área del resumen */
+}
+
+.expenses-list-section {
+    grid-area: list; /* Área de la lista */
+}
+
+/* Estilos de tarjetas */
+.card {
+    background: var(--background); /* Fondo blanco */
+    border-radius: var(--radius); /* Bordes redondeados */
+    box-shadow: var(--shadow); /* Sombra para profundidad */
+    overflow: hidden; /* Oculta contenido desbordado */
+}
+
+/* Encabezado de tarjetas */
+.card-header {
+    background: var(--card-background); /* Fondo claro */
+    padding: var(--spacing-md); /* Padding interno */
+    border-bottom: 1px solid var(--border-color); /* Borde inferior */
+    display: flex; /* Layout flexible */
+    justify-content: space-between; /* Espacia elementos a los extremos */
+    align-items: center; /* Alineación vertical central */
+}
+
+/* Títulos de tarjetas */
+.card-header h2 {
+    font-size: 1.3rem; /* Tamaño de fuente medio-grande */
+    font-weight: 600; /* Peso semi-grueso */
+    color: var(--text-dark); /* Color de texto principal */
+}
+
+/* Contenido de tarjetas */
+.card > form,
+.card > .summary-stats,
+.card > .expenses-list {
+    padding: var(--spacing-md); /* Padding interno */
+}
+
+/* Grupos de campos del formulario */
+.form-group {
+    margin-bottom: var(--spacing-md); /* Margen inferior entre campos */
+}
+
+/* Fila de formulario para campos lado a lado */
+.form-row {
+    display: flex; /* Layout flexible */
+    gap: var(--spacing-sm); /* Espacio entre campos */
+    margin-bottom: var(--spacing-md); /* Margen inferior */
+}
+
+/* Campos dentro de filas ocupan espacio igual */
+.form-row .form-group {
+    flex: 1; /* Crecimiento flexible igual */
+    margin-bottom: 0; /* Sin margen inferior en filas */
+}
+
+/* Etiquetas de los campos */
+.form-group label {
+    display: block; /* Ocupa toda la línea */
+    font-weight: 500; /* Peso de fuente medio */
+    margin-bottom: var(--spacing-xs); /* Margen inferior pequeño */
+    color: var(--text-dark); /* Color de texto principal */
+    font-size: 0.9rem; /* Tamaño de fuente ligeramente menor */
+}
+
+/* Campos de entrada (inputs, select, textarea) */
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%; /* Ancho completo */
+    padding: var(--spacing-sm); /* Padding interno */
+    border: 2px solid var(--border-color); /* Borde con color definido */
+    border-radius: var(--radius); /* Bordes redondeados */
+    font-size: 1rem; /* Tamaño de fuente normal */
+    transition: all 0.3s ease; /* Transición suave para cambios */
+    background: var(--background); /* Fondo blanco */
+    font-family: inherit; /* Hereda la fuente */
+}
+
+/* Estado focus de los campos */
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none; /* Elimina outline por defecto */
+    border-color: var(--primary-color); /* Borde azul al enfocar */
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1); /* Sombra azul sutil */
+}
+
+/* Placeholder de los inputs */
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: var(--text-light); /* Color claro para placeholder */
+    opacity: 0.7; /* Ligeramente transparente */
+}
+
+/* Textarea específico */
+.form-group textarea {
+    resize: vertical; /* Solo permite redimensionar verticalmente */
+    min-height: 80px; /* Altura mínima */
+}
+
+/* Botón primario del formulario */
+.btn-primary {
+    width: 100%; /* Ancho completo */
+    padding: var(--spacing-sm); /* Padding interno */
+    background: var(--primary-color); /* Fondo con color primario */
+    color: white; /* Texto blanco */
+    border: none; /* Sin borde */
+    border-radius: var(--radius); /* Bordes redondeados */
+    font-size: 1rem; /* Tamaño de fuente normal */
+    font-weight: 600; /* Peso de fuente semi-grueso */
+    cursor: pointer; /* Cursor de puntero */
+    transition: all 0.3s ease; /* Transición suave */
+}
+
+/* Efecto hover para botón primario */
+.btn-primary:hover {
+    background: var(--primary-hover); /* Color más oscuro al hacer hover */
+    transform: translateY(-1px); /* Efecto de elevación */
+    box-shadow: var(--shadow); /* Sombra para profundidad */
+}
+
+/* Estadísticas del resumen */
+.summary-stats {
+    display: flex; /* Layout flexible */
+    flex-direction: column; /* Dirección de columna */
+    gap: var(--spacing-md); /* Espacio entre elementos */
+}
+
+/* Elementos individuales de estadística */
+.stat-item {
+    display: flex; /* Layout flexible */
+    justify-content: space-between; /* Espacia elementos a los extremos */
+    align-items: center; /* Alineación vertical central */
+    padding: var(--spacing-sm); /* Padding interno */
+    background: var(--card-background); /* Fondo claro */
+    border-radius: var(--radius); /* Bordes redondeados */
+}
+
+/* Etiquetas de estadísticas */
+.stat-label {
+    color: var(--text-light); /* Color de texto claro */
+    font-size: 0.9rem; /* Tamaño de fuente pequeño */
+    font-weight: 500; /* Peso de fuente medio */
+}
+
+/* Valores de estadísticas */
+.stat-value {
+    color: var(--text-dark); /* Color de texto principal */
+    font-size: 1.1rem; /* Tamaño de fuente ligeramente mayor */
+    font-weight: 600; /* Peso semi-grueso */
+}
+
+/* Filtros de la lista */
+.filters {
+    display: flex; /* Layout flexible */
+    gap: var(--spacing-sm); /* Espacio entre filtros */
+}
+
+/* Select de filtros */
+.filter-select {
+    padding: var(--spacing-xs) var(--spacing-sm); /* Padding interno */
+    border: 1px solid var(--border-color); /* Borde sutil */
+    border-radius: var(--radius); /* Bordes redondeados */
+    font-size: 0.9rem; /* Tamaño de fuente pequeño */
+    background: var(--background); /* Fondo blanco */
+    color: var(--text-dark); /* Color de texto */
+}
+
+/* Lista de gastos */
+.expenses-list {
+    display: flex; /* Layout flexible */
+    flex-direction: column; /* Dirección de columna */
+    gap: var(--spacing-sm); /* Espacio entre elementos */
+}
+
+/* Elementos individuales de gasto */
+.expense-item {
+    display: flex; /* Layout flexible */
+    justify-content: space-between; /* Espacia elementos a los extremos */
+    align-items: center; /* Alineación vertical central */
+    padding: var(--spacing-md); /* Padding interno */
+    background: var(--card-background); /* Fondo claro */
+    border-radius: var(--radius); /* Bordes redondeados */
+    border: 1px solid var(--border-color); /* Borde sutil */
+    transition: all 0.3s ease; /* Transición suave */
+}
+
+/* Efecto hover para elementos de gasto */
+.expense-item:hover {
+    box-shadow: var(--shadow); /* Sombra al hacer hover */
+    transform: translateY(-1px); /* Ligera elevación */
+}
+
+/* Información del gasto */
+.expense-info {
+    display: flex; /* Layout flexible */
+    align-items: center; /* Alineación vertical central */
+    gap: var(--spacing-sm); /* Espacio entre elementos */
+}
+
+/* Categoría con icono */
+.expense-category {
+    width: 40px; /* Ancho fijo */
+    height: 40px; /* Alto fijo */
+    display: flex; /* Layout flexible */
+    align-items: center; /* Alineación vertical central */
+    justify-content: center; /* Alineación horizontal central */
+    border-radius: 50%; /* Forma circular */
+    font-size: 1.2rem; /* Tamaño de fuente para iconos */
+}
+
+/* Colores específicos por categoría */
+.expense-category.alimentacion {
+    background: #fef3c7; /* Fondo amarillo claro para alimentación */
+}
+
+.expense-category.transporte {
+    background: #dbeafe; /* Fondo azul claro para transporte */
+}
+
+.expense-category.vivienda {
+    background: #d1fae5; /* Fondo verde claro para vivienda */
+}
+
+.expense-category.entretenimiento {
+    background: #fce7f3; /* Fondo rosa claro para entretenimiento */
+}
+
+.expense-category.salud {
+    background: #fed7d7; /* Fondo rojo claro para salud */
+}
+
+/* Detalles del gasto */
+.expense-details h3 {
+    font-size: 1rem; /* Tamaño de fuente normal */
+    font-weight: 600; /* Peso semi-grueso */
+    color: var(--text-dark); /* Color de texto principal */
+    margin-bottom: 2px; /* Margen inferior muy pequeño */
+}
+
+/* Fecha del gasto */
+.expense-date {
+    font-size: 0.85rem; /* Tamaño de fuente pequeño */
+    color: var(--text-light); /* Color de texto claro */
+}
+
+/* Monto del gasto */
+.expense-amount {
+    font-size: 1.1rem; /* Tamaño de fuente ligeramente mayor */
+    font-weight: 600; /* Peso semi-grueso */
+    color: var(--error-color); /* Color rojo para gastos negativos */
+}
+
+/* Botón secundario */
+.btn-secondary {
+    background: transparent; /* Fondo transparente */
+    color: var(--primary-color); /* Texto en color primario */
+    border: 2px solid var(--primary-color); /* Borde en color primario */
+    padding: var(--spacing-xs) var(--spacing-sm); /* Padding interno */
+    border-radius: var(--radius); /* Bordes redondeados */
+    font-weight: 500; /* Peso de fuente medio */
+    cursor: pointer; /* Cursor de puntero */
+    transition: all 0.3s ease; /* Transición suave */
+    text-decoration: none; /* Sin subrayado para enlaces */
+    display: inline-block; /* Display en bloque para padding */
+}
+
+/* Efecto hover para botón secundario */
+.btn-secondary:hover {
+    background: var(--primary-color); /* Fondo azul al hacer hover */
+    color: white; /* Texto blanco al hacer hover */
+    transform: translateY(-1px); /* Ligera elevación */
+}
+
+/* Pie de tarjeta */
+.card-footer {
+    padding: var(--spacing-md); /* Padding interno */
+    border-top: 1px solid var(--border-color); /* Borde superior */
+    background: var(--card-background); /* Fondo claro */
+    text-align: center; /* Texto centrado */
+}
+
+/* Estilos del footer */
+footer {
+    background: var(--card-background); /* Fondo de tarjeta */
+    border-top: 1px solid var(--border-color); /* Borde superior */
+    padding: var(--spacing-lg); /* Padding interno */
+    margin-top: auto; /* Margen superior automático para empujar al fondo */
+}
+
+/* Contenido del footer */
+.footer-content {
+    text-align: center; /* Texto centrado */
+    color: var(--text-light); /* Color de texto claro */
+    font-size: 0.9rem; /* Tamaño de fuente pequeño */
+}
+
+/* Media queries para tablets */
+@media (max-width: 1024px) {
+    /* Grid se reorganiza para tablets */
+    .dashboard-grid {
+        grid-template-columns: 1fr; /* Una sola columna */
+        grid-template-areas: /* Reorganiza áreas */
+            "summary"
+            "form"
+            "list";
+    }
+    
+    /* Summary se extiende horizontalmente */
+    .summary-stats {
+        flex-direction: row; /* Dirección horizontal */
+        justify-content: space-around; /* Distribución uniforme */
+    }
+}
+
+/* Media queries para dispositivos móviles */
+@media (max-width: 768px) {
+    /* Fila se convierte en columna en móviles */
+    .form-row {
+        flex-direction: column; /* Dirección de columna */
+        gap: 0; /* Sin espacio entre elementos en columna */
+    }
+    
+    /* Campos en fila recuperan su margen inferior */
+    .form-row .form-group {
+        margin-bottom: var(--spacing-md); /* Margen inferior restaurado */
+    }
+    
+    /* Dashboard con menos padding */
+    .dashboard {
+        padding: var(--spacing-md); /* Padding reducido */
+    }
+    
+    /* Título más pequeño en móviles */
+    .dashboard-header h1 {
+        font-size: 2rem; /* Tamaño de fuente reducido */
+    }
+    
+    /* Stats apiladas en móviles */
+    .summary-stats {
+        flex-direction: column; /* Dirección de columna */
+    }
+    
+    /* Expense items con padding reducido */
+    .expense-item {
+        padding: var(--spacing-sm); /* Padding reducido */
+    }
+    
+    /* Info del gasto con menos espacio */
+    .expense-info {
+        gap: var(--spacing-xs); /* Espacio reducido */
+    }
+    
+    /* Categoría más pequeña */
+    .expense-category {
+        width: 35px; /* Ancho reducido */
+        height: 35px; /* Alto reducido */
+        font-size: 1rem; /* Tamaño de fuente reducido */
+    }
+}
+
+/* Media queries para móviles pequeños */
+@media (max-width: 480px) {
+    /* Contenedor principal con menos sombra */
+    .container {
+        box-shadow: none; /* Sin sombra en móviles pequeños */
+    }
+    
+    /* Dashboard con padding mínimo */
+    .dashboard {
+        padding: var(--spacing-sm); /* Padding mínimo */
+    }
+    
+    /* Navbar más compacto */
+    .navbar {
+        padding: var(--spacing-xs) var(--spacing-sm); /* Padding reducido */
+        flex-wrap: wrap; /* Permite salto de línea */
+    }
+    
+    /* User greeting se oculta en móviles muy pequeños */
+    .user-greeting {
+        display: none; /* Oculto para ahorrar espacio */
+    }
+    
+    /* Card headers con padding reducido */
+    .card-header {
+        padding: var(--spacing-sm); /* Padding reducido */
+        flex-direction: column; /* Dirección de columna */
+        align-items: flex-start; /* Alineación al inicio */
+        gap: var(--spacing-xs); /* Espacio entre elementos */
+    }
+    
+    /* Filtros ocupan ancho completo */
+    .filter-select {
+        width: 100%; /* Ancho completo */
+    }
+}

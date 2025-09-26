@@ -1,0 +1,415 @@
+/* Variables CSS para colores y espaciados reutilizables */
+:root {
+    --primary-color: #4f46e5; /* Color primario principal azul índigo */
+    --primary-hover: #4338ca; /* Color primario más oscuro para hover */
+    --secondary-color: #64748b; /* Color secundario gris azulado */
+    --text-dark: #1f2937; /* Color de texto principal oscuro */
+    --text-light: #6b7280; /* Color de texto secundario más claro */
+    --background: #ffffff; /* Color de fondo blanco */
+    --card-background: #f8fafc; /* Color de fondo para tarjetas */
+    --border-color: #e2e8f0; /* Color de bordes */
+    --success-color: #059669; /* Color verde para éxito */
+    --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); /* Sombra estándar */
+    --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1); /* Sombra más grande */
+    --radius: 0.75rem; /* Radio de borde estándar */
+    --spacing-xs: 0.5rem; /* Espaciado extra pequeño */
+    --spacing-sm: 1rem; /* Espaciado pequeño */
+    --spacing-md: 1.5rem; /* Espaciado medio */
+    --spacing-lg: 2rem; /* Espaciado grande */
+    --spacing-xl: 3rem; /* Espaciado extra grande */
+}
+
+/* Reset básico y configuración global */
+* {
+    margin: 0; /* Elimina márgenes por defecto */
+    padding: 0; /* Elimina padding por defecto */
+    box-sizing: border-box; /* Incluye padding y border en el ancho total */
+}
+
+/* Configuración del body principal */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; /* Fuentes del sistema para mejor rendimiento */
+    line-height: 1.6; /* Altura de línea para mejor legibilidad */
+    color: var(--text-dark); /* Color de texto principal */
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); /* Gradiente de fondo atractivo */
+    min-height: 100vh; /* Altura mínima de viewport completo */
+}
+
+/* Contenedor principal que centra todo */
+.container {
+    max-width: 1200px; /* Ancho máximo del contenedor */
+    margin: 0 auto; /* Centrado horizontal */
+    background: var(--background); /* Fondo blanco para el contenido */
+    min-height: 100vh; /* Altura mínima completa */
+    box-shadow: var(--shadow-lg); /* Sombra lateral para destacar */
+}
+
+/* Estilos de la barra de navegación */
+.navbar {
+    display: flex; /* Layout flexible */
+    justify-content: space-between; /* Espacia elementos a los extremos */
+    align-items: center; /* Alinea verticalmente al centro */
+    padding: var(--spacing-sm) var(--spacing-lg); /* Padding interno */
+    background: var(--background); /* Fondo blanco */
+    border-bottom: 1px solid var(--border-color); /* Borde inferior sutil */
+}
+
+/* Estilo del logotipo */
+.logo h2 {
+    color: var(--primary-color); /* Color primario para el logo */
+    font-weight: 700; /* Peso de fuente grueso */
+    font-size: 1.5rem; /* Tamaño de fuente del logo */
+}
+
+/* Contenedor de enlaces de navegación */
+.nav-links {
+    display: flex; /* Layout flexible */
+    gap: var(--spacing-sm); /* Espacio entre enlaces */
+    align-items: center; /* Alineación vertical central */
+}
+
+/* Estilos para botones de navegación */
+.btn-nav {
+    padding: var(--spacing-xs) var(--spacing-sm); /* Padding interno del botón */
+    text-decoration: none; /* Elimina subrayado de enlace */
+    border-radius: var(--radius); /* Bordes redondeados */
+    font-weight: 500; /* Peso de fuente medio */
+    transition: all 0.3s ease; /* Transición suave para cambios */
+    color: var(--text-dark); /* Color de texto */
+}
+
+/* Estilo del botón primario de navegación */
+.btn-primary {
+    background: var(--primary-color); /* Fondo con color primario */
+    color: white; /* Texto blanco */
+    border: none; /* Sin borde */
+}
+
+/* Efecto hover para botón primario */
+.btn-primary:hover {
+    background: var(--primary-hover); /* Color más oscuro al hacer hover */
+    transform: translateY(-1px); /* Efecto de elevación */
+}
+
+/* Sección hero principal */
+.hero-section {
+    background: linear-gradient(135deg, var(--primary-color), #6366f1); /* Gradiente azul */
+    color: white; /* Texto blanco */
+    padding-bottom: var(--spacing-xl); /* Padding inferior grande */
+}
+
+/* Contenido de la sección hero */
+.hero-content {
+    text-align: center; /* Texto centrado */
+    padding: var(--spacing-xl) var(--spacing-lg); /* Padding generoso */
+    max-width: 800px; /* Ancho máximo para legibilidad */
+    margin: 0 auto; /* Centrado horizontal */
+}
+
+/* Título principal de la página */
+.hero-content h1 {
+    font-size: 3.5rem; /* Tamaño de fuente grande */
+    font-weight: 700; /* Peso grueso */
+    margin-bottom: var(--spacing-sm); /* Margen inferior */
+    line-height: 1.2; /* Altura de línea compacta */
+}
+
+/* Subtítulo de la sección hero */
+.hero-subtitle {
+    font-size: 1.25rem; /* Tamaño de fuente medio-grande */
+    opacity: 0.9; /* Ligeramente transparente */
+    margin-bottom: var(--spacing-lg); /* Margen inferior */
+    font-weight: 300; /* Peso de fuente ligero */
+}
+
+/* Contenedor de botones de llamada a la acción */
+.hero-buttons {
+    display: flex; /* Layout flexible */
+    gap: var(--spacing-sm); /* Espacio entre botones */
+    justify-content: center; /* Centrado horizontal */
+    flex-wrap: wrap; /* Permite salto de línea en pantallas pequeñas */
+}
+
+/* Botón principal de llamada a la acción */
+.btn-cta {
+    background: white; /* Fondo blanco */
+    color: var(--primary-color); /* Texto en color primario */
+    padding: var(--spacing-sm) var(--spacing-lg); /* Padding generoso */
+    text-decoration: none; /* Sin subrayado */
+    border-radius: var(--radius); /* Bordes redondeados */
+    font-weight: 600; /* Peso de fuente semi-grueso */
+    font-size: 1.1rem; /* Tamaño de fuente ligeramente mayor */
+    transition: all 0.3s ease; /* Transición suave */
+    box-shadow: var(--shadow); /* Sombra para profundidad */
+}
+
+/* Efecto hover para botón de CTA */
+.btn-cta:hover {
+    transform: translateY(-2px); /* Elevación al hacer hover */
+    box-shadow: var(--shadow-lg); /* Sombra más grande */
+}
+
+/* Botón secundario */
+.btn-secondary {
+    background: transparent; /* Fondo transparente */
+    color: white; /* Texto blanco */
+    padding: var(--spacing-sm) var(--spacing-lg); /* Padding generoso */
+    text-decoration: none; /* Sin subrayado */
+    border: 2px solid white; /* Borde blanco */
+    border-radius: var(--radius); /* Bordes redondeados */
+    font-weight: 600; /* Peso de fuente semi-grueso */
+    font-size: 1.1rem; /* Tamaño de fuente ligeramente mayor */
+    transition: all 0.3s ease; /* Transición suave */
+}
+
+/* Efecto hover para botón secundario */
+.btn-secondary:hover {
+    background: white; /* Fondo blanco al hacer hover */
+    color: var(--primary-color); /* Texto cambia a color primario */
+}
+
+/* Espaciado para secciones principales */
+main {
+    padding: var(--spacing-xl) var(--spacing-lg); /* Padding para el contenido principal */
+}
+
+/* Encabezado de secciones */
+.section-header {
+    text-align: center; /* Texto centrado */
+    margin-bottom: var(--spacing-xl); /* Margen inferior grande */
+    max-width: 600px; /* Ancho máximo */
+    margin-left: auto; /* Centrado horizontal */
+    margin-right: auto; /* Centrado horizontal */
+}
+
+/* Títulos de sección */
+.section-header h2 {
+    font-size: 2.5rem; /* Tamaño de fuente grande */
+    font-weight: 700; /* Peso grueso */
+    margin-bottom: var(--spacing-sm); /* Margen inferior */
+    color: var(--text-dark); /* Color de texto principal */
+}
+
+/* Párrafos en encabezados de sección */
+.section-header p {
+    font-size: 1.1rem; /* Tamaño de fuente ligeramente mayor */
+    color: var(--text-light); /* Color de texto más claro */
+}
+
+/* Grid de características */
+.features-grid {
+    display: grid; /* Layout de grilla */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Columnas responsivas */
+    gap: var(--spacing-lg); /* Espacio entre elementos */
+    margin-bottom: var(--spacing-xl); /* Margen inferior */
+}
+
+/* Tarjetas individuales de características */
+.feature-card {
+    background: var(--card-background); /* Fondo de tarjeta */
+    padding: var(--spacing-lg); /* Padding interno */
+    border-radius: var(--radius); /* Bordes redondeados */
+    text-align: center; /* Texto centrado */
+    box-shadow: var(--shadow); /* Sombra para profundidad */
+    transition: transform 0.3s ease; /* Transición para animación */
+}
+
+/* Efecto hover para tarjetas */
+.feature-card:hover {
+    transform: translateY(-5px); /* Elevación al hacer hover */
+}
+
+/* Iconos de características */
+.feature-icon {
+    font-size: 3rem; /* Tamaño grande para iconos */
+    margin-bottom: var(--spacing-sm); /* Margen inferior */
+}
+
+/* Títulos de características */
+.feature-card h3 {
+    font-size: 1.3rem; /* Tamaño de fuente medio-grande */
+    font-weight: 600; /* Peso semi-grueso */
+    margin-bottom: var(--spacing-xs); /* Margen inferior pequeño */
+    color: var(--text-dark); /* Color de texto principal */
+}
+
+/* Descripción de características */
+.feature-card p {
+    color: var(--text-light); /* Color de texto más claro */
+    line-height: 1.5; /* Altura de línea para legibilidad */
+}
+
+/* Contenedor de pasos */
+.steps-container {
+    display: flex; /* Layout flexible */
+    justify-content: space-around; /* Distribución uniforme */
+    flex-wrap: wrap; /* Permite salto de línea */
+    gap: var(--spacing-lg); /* Espacio entre pasos */
+    margin-bottom: var(--spacing-xl); /* Margen inferior */
+}
+
+/* Pasos individuales */
+.step {
+    text-align: center; /* Texto centrado */
+    max-width: 250px; /* Ancho máximo */
+    flex: 1; /* Crecimiento flexible */
+}
+
+/* Números de pasos */
+.step-number {
+    width: 60px; /* Ancho fijo */
+    height: 60px; /* Alto fijo */
+    background: var(--primary-color); /* Fondo con color primario */
+    color: white; /* Texto blanco */
+    border-radius: 50%; /* Forma circular */
+    display: flex; /* Layout flexible */
+    align-items: center; /* Alineación vertical central */
+    justify-content: center; /* Alineación horizontal central */
+    font-size: 1.5rem; /* Tamaño de fuente grande */
+    font-weight: 700; /* Peso grueso */
+    margin: 0 auto var(--spacing-sm); /* Centrado y margen inferior */
+}
+
+/* Títulos de pasos */
+.step h3 {
+    font-size: 1.2rem; /* Tamaño de fuente medio */
+    font-weight: 600; /* Peso semi-grueso */
+    margin-bottom: var(--spacing-xs); /* Margen inferior pequeño */
+    color: var(--text-dark); /* Color de texto principal */
+}
+
+/* Descripción de pasos */
+.step p {
+    color: var(--text-light); /* Color de texto más claro */
+    font-size: 0.95rem; /* Tamaño de fuente ligeramente menor */
+}
+
+/* Sección de llamada a la acción final */
+.cta-section {
+    background: linear-gradient(135deg, var(--primary-color), #6366f1); /* Gradiente azul */
+    color: white; /* Texto blanco */
+    padding: var(--spacing-xl); /* Padding generoso */
+    border-radius: var(--radius); /* Bordes redondeados */
+    text-align: center; /* Texto centrado */
+    margin: var(--spacing-xl) 0; /* Margen superior e inferior */
+}
+
+/* Títulos en sección CTA */
+.cta-content h2 {
+    font-size: 2.2rem; /* Tamaño de fuente grande */
+    font-weight: 700; /* Peso grueso */
+    margin-bottom: var(--spacing-sm); /* Margen inferior */
+}
+
+/* Párrafos en sección CTA */
+.cta-content p {
+    font-size: 1.1rem; /* Tamaño de fuente ligeramente mayor */
+    opacity: 0.9; /* Ligeramente transparente */
+    margin-bottom: var(--spacing-lg); /* Margen inferior */
+}
+
+/* Botón grande de CTA */
+.btn-cta-large {
+    background: white; /* Fondo blanco */
+    color: var(--primary-color); /* Texto en color primario */
+    padding: var(--spacing-md) var(--spacing-xl); /* Padding extra generoso */
+    text-decoration: none; /* Sin subrayado */
+    border-radius: var(--radius); /* Bordes redondeados */
+    font-weight: 600; /* Peso semi-grueso */
+    font-size: 1.2rem; /* Tamaño de fuente grande */
+    transition: all 0.3s ease; /* Transición suave */
+    display: inline-block; /* Display en bloque para padding */
+    box-shadow: var(--shadow); /* Sombra para profundidad */
+}
+
+/* Efecto hover para botón grande */
+.btn-cta-large:hover {
+    transform: translateY(-2px); /* Elevación al hacer hover */
+    box-shadow: var(--shadow-lg); /* Sombra más grande */
+}
+
+/* Estilos del footer */
+footer {
+    background: var(--card-background); /* Fondo de tarjeta */
+    border-top: 1px solid var(--border-color); /* Borde superior */
+    padding: var(--spacing-lg); /* Padding interno */
+}
+
+/* Contenido del footer */
+.footer-content {
+    display: flex; /* Layout flexible */
+    justify-content: space-between; /* Espacia elementos a los extremos */
+    align-items: center; /* Alineación vertical central */
+    flex-wrap: wrap; /* Permite salto de línea */
+    gap: var(--spacing-sm); /* Espacio entre elementos */
+}
+
+/* Enlaces del footer */
+.footer-links {
+    display: flex; /* Layout flexible */
+    gap: var(--spacing-md); /* Espacio entre enlaces */
+}
+
+/* Estilos de enlaces individuales */
+.footer-links a {
+    color: var(--text-light); /* Color de texto claro */
+    text-decoration: none; /* Sin subrayado */
+    transition: color 0.3s ease; /* Transición suave */
+}
+
+/* Efecto hover para enlaces del footer */
+.footer-links a:hover {
+    color: var(--primary-color); /* Cambia a color primario */
+}
+
+/* Media queries para dispositivos móviles */
+@media (max-width: 600px) {
+    /* Ajuste del título hero para móviles */
+    .hero-content h1 {
+        font-size: 2.5rem; /* Tamaño de fuente más pequeño */
+    }
+    
+    /* Ajuste del subtítulo para móviles */
+    .hero-subtitle {
+        font-size: 1.1rem; /* Tamaño de fuente más pequeño */
+    }
+    
+    /* Botones apilados verticalmente */
+    .hero-buttons {
+        flex-direction: column; /* Dirección de columna */
+        align-items: center; /* Centrado horizontal */
+    }
+    
+    /* Ajuste de padding principal para móviles */
+    main {
+        padding: var(--spacing-lg) var(--spacing-sm); /* Padding reducido lateralmente */
+    }
+    
+    /* Grid de una columna en móviles */
+    .features-grid {
+        grid-template-columns: 1fr; /* Una sola columna */
+        gap: var(--spacing-md); /* Espacio reducido */
+    }
+    
+    /* Pasos apilados en móviles */
+    .steps-container {
+        flex-direction: column; /* Dirección de columna */
+        align-items: center; /* Centrado horizontal */
+    }
+    
+    /* Títulos de sección más pequeños */
+    .section-header h2 {
+        font-size: 2rem; /* Tamaño de fuente reducido */
+    }
+    
+    /* Footer apilado en móviles */
+    .footer-content {
+        flex-direction: column; /* Dirección de columna */
+        text-align: center; /* Texto centrado */
+    }
+    
+    /* Padding de la sección CTA reducido */
+    .cta-section {
+        padding: var(--spacing-lg); /* Padding reducido */
+    }
+}

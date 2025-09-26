@@ -1,0 +1,224 @@
+<!DOCTYPE html> <!-- Define el documento como HTML5 -->
+<html lang="es"> <!-- Elemento raíz con idioma español -->
+<head> <!-- Sección de metadatos del documento -->
+    <meta charset="UTF-8"> <!-- Codificación UTF-8 para caracteres especiales -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Configuración responsive para móviles -->
+    <meta name="description" content="Panel de control de gastos mensuales - Organiza y rastrea tus finanzas personales"> <!-- Descripción para SEO -->
+    <title>Panel de Gastos - GastoControl</title> <!-- Título que aparece en la pestaña del navegador -->
+    <link rel="stylesheet" href="css/expenses.css"> <!-- Enlaza la hoja de estilos específica del panel de gastos -->
+</head>
+<script src="js/expenses.js"></script>
+<body> <!-- Cuerpo principal del documento -->
+    <div class="container"> <!-- Contenedor principal que centra el contenido -->
+        <header> <!-- Encabezado semántico de la página -->
+            <nav class="navbar"> <!-- Barra de navegación superior -->
+                <div class="logo"> <!-- Contenedor del logotipo -->
+                    <a href="index.html">GastoControl</a> <!-- Enlace al inicio con el nombre de la app -->
+                </div>
+                <div class="nav-links"> <!-- Enlaces de navegación del usuario logueado -->
+                    <span class="user-greeting">Hola, Usuario</span> <!-- Saludo personalizado al usuario -->
+                    <a href="login.html" class="btn-nav">Cerrar Sesión</a> <!-- Enlace para cerrar sesión -->
+                </div>
+            </nav>
+        </header>
+        
+        <main> <!-- Contenido principal de la página -->
+            <div class="dashboard"> <!-- Contenedor principal del dashboard -->
+                <div class="dashboard-header"> <!-- Encabezado del dashboard -->
+                    <h1>Panel de Control de Gastos</h1> <!-- Título principal del dashboard -->
+                    <p>Administra y rastrea tus gastos mensuales</p> <!-- Subtítulo explicativo -->
+                </div>
+                
+                <div class="dashboard-grid"> <!-- Grid principal que organiza el contenido -->
+                    <section class="expense-form-section"> <!-- Sección del formulario para agregar gastos -->
+                        <div class="card"> <!-- Tarjeta que contiene el formulario -->
+                            <div class="card-header"> <!-- Encabezado de la tarjeta -->
+                                <h2>Agregar Nuevo Gasto</h2> <!-- Título de la sección -->
+                            </div>
+                            
+                            <form id="expenseForm" action="#" method="POST" novalidate> <!-- Formulario para agregar gastos (cambiar action por endpoint real) -->
+                                <div class="form-row"> <!-- Fila que contiene fecha y categoría -->
+                                    <div class="form-group"> <!-- Contenedor para el campo de fecha -->
+                                        <label for="fecha">Fecha</label> <!-- Etiqueta asociada al input de fecha -->
+                                        <input type="date" id="name" name="date" required aria-required="true" max="2025-12-31" min="2024-01-01" >
+                                        <!--  <input 
+                                            <!-- type="date" <!-- Tipo fecha para selector de calendario -->
+                                           <!--  id="fecha" <!-- Identificador único del elemento -->
+                                            <!-- name="fecha" <!-- Nombre del campo para envío al servidor -->
+                                            <!-- required <!-- Campo obligatorio -->
+                                            <!-- aria-required="true" <!-- Atributo de accesibilidad -->
+                                            <!-- max="2024-12-31" <!-- Fecha máxima permitida -->
+                                           <!--  min="2024-01-01" <!-- Fecha mínima permitida -->
+                                       <!--  >
+                                    </div>
+                                    
+                                    <div class="form-group"> <!-- Contenedor para el campo de categoría -->
+                                        <label for="categoria">Categoría</label> <!-- Etiqueta asociada al select de categoría -->
+                                        <select 
+                                            id="categoria" <!-- Identificador único del elemento -->
+                                            name="categoria" <!-- Nombre del campo para envío al servidor -->
+                                            required <!-- Campo obligatorio -->
+                                            aria-required="true" <!-- Atributo de accesibilidad -->
+                                        >
+                                            <option value="">Selecciona una categoría</option> <!-- Opción por defecto vacía -->
+                                            <option value="alimentacion">Alimentación</option> <!-- Categoría de gastos en comida -->
+                                            <option value="transporte">Transporte</option> <!-- Categoría de gastos en transporte -->
+                                            <option value="vivienda">Vivienda</option> <!-- Categoría de gastos de hogar -->
+                                            <option value="salud">Salud</option> <!-- Categoría de gastos médicos -->
+                                            <option value="entretenimiento">Entretenimiento</option> <!-- Categoría de gastos recreativos -->
+                                            <option value="educacion">Educación</option> <!-- Categoría de gastos educativos -->
+                                            <option value="ropa">Ropa</option> <!-- Categoría de gastos en vestimenta -->
+                                            <option value="otros">Otros</option> <!-- Categoría para gastos varios -->
+                                        </select>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group"> <!-- Contenedor para el campo de monto -->
+                                    <label for="monto">Monto (COP)</label> <!-- Etiqueta asociada al input de monto -->
+                                    <input id="monto" name="monto" required area-required="true" min="1" max="99999999" step="1" placeholder="Ingresa el monto del gasto" >
+                                    <!--<input 
+                                       <!-- type="number" <!-- Tipo número para valores monetarios -->
+                                        <!--id="monto" <!-- Identificador único del elemento -->
+                                        <!--name="monto" <!-- Nombre del campo para envío al servidor -->
+                                        <!--required <!-- Campo obligatorio -->
+                                        <!--aria-required="true" <!-- Atributo de accesibilidad -->
+                                        <!--min="1" <!-- Valor mínimo de 1 peso -->
+                                        <!--max="99999999" <!-- Valor máximo permitido -->
+                                        <!--step="1" <!-- Incrementos de 1 peso -->
+                                        <!--placeholder="Ingresa el monto del gasto" <!-- Texto de ayuda dentro del input -->
+                                    <!-->
+                                </div>
+                                
+                                <div class="form-group"> <!-- Contenedor para el campo de descripción -->
+                                    <label for="descripcion">Descripción</label> <!-- Etiqueta asociada al textarea de descripción -->
+                                    <textarea id="descripcion" name="descripcion" rows="3" maxlength="200" placeholder="Describe brevemente el gasto (opcional)"></textarea>  
+                                       <!--  id="descripcion" <!-- Identificador único del elemento -->
+                                       <!--  name="descripcion" <!-- Nombre del campo para envío al servidor -->
+                                       <!--  rows="3" <!-- Número de filas visibles del textarea -->
+                                       <!--  maxlength="200" <!-- Longitud máxima de 200 caracteres -->
+                                        <!-- placeholder="Describe brevemente el gasto (opcional)" <!-- Texto de ayuda dentro del textarea -->
+                                    <!-- ></textarea>
+                                </div>
+                                
+                                <div class="form-group"> <!-- Contenedor para el botón de envío -->
+                                    <button type="submit" class="btn-primary">Agregar Gasto</button> <!-- Botón para agregar el gasto -->
+                                </div>
+                            </form>
+                        </div>
+                    </section>
+                    
+                    <aside class="summary-section"> <!-- Sección lateral con resumen de gastos -->
+                        <div class="card"> <!-- Tarjeta que contiene el resumen mensual -->
+                            <div class="card-header"> <!-- Encabezado de la tarjeta de resumen -->
+                                <h2>Resumen del Mes</h2> <!-- Título de la sección de resumen -->
+                            </div>
+                            
+                            <div class="summary-stats"> <!-- Contenedor de estadísticas del resumen -->
+                                <div class="stat-item"> <!-- Elemento individual de estadística -->
+                                    <span class="stat-label">Total Gastado</span> <!-- Etiqueta de la estadística -->
+                                    <span class="stat-value">$850.000</span> <!-- Valor estático de ejemplo -->
+                                </div>
+                                
+                                <div class="stat-item"> <!-- Segundo elemento de estadística -->
+                                    <span class="stat-label">Gastos este mes</span> <!-- Etiqueta del número de gastos -->
+                                    <span class="stat-value">15</span> <!-- Valor estático de ejemplo -->
+                                </div>
+                                
+                                <div class="stat-item"> <!-- Tercer elemento de estadística -->
+                                    <span class="stat-label">Promedio por día</span> <!-- Etiqueta del promedio diario -->
+                                    <span class="stat-value">$28.333</span> <!-- Valor estático de ejemplo -->
+                                </div>
+                            </div>
+                        </div>
+                    </aside>
+                    
+                    <section class="expenses-list-section"> <!-- Sección principal con la lista de gastos -->
+                        <div class="card"> <!-- Tarjeta que contiene la lista de gastos -->
+                            <div class="card-header"> <!-- Encabezado de la tarjeta de lista -->
+                                <h2>Gastos Recientes</h2> <!-- Título de la sección de gastos -->
+                                <div class="filters"> <!-- Contenedor de filtros para la lista -->
+                                    <select class="filter-select" aria-label="Filtrar por categoría"> <!-- Select para filtrar por categoría -->
+                                        <option value="">Todas las categorías</option> <!-- Opción para mostrar todas las categorías -->
+                                        <option value="alimentacion">Alimentación</option> <!-- Filtro por alimentación -->
+                                        <option value="transporte">Transporte</option> <!-- Filtro por transporte -->
+                                        <option value="vivienda">Vivienda</option> <!-- Filtro por vivienda -->
+                                        <option value="salud">Salud</option> <!-- Filtro por salud -->
+                                        <option value="entretenimiento">Entretenimiento</option> <!-- Filtro por entretenimiento -->
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div class="expenses-list"> <!-- Contenedor de la lista de gastos -->
+                                <div class="expense-item"> <!-- Elemento individual de gasto -->
+                                    <div class="expense-info"> <!-- Información del gasto -->
+                                        <div class="expense-category alimentacion">🍔</div> <!-- Icono y categoría del gasto -->
+                                        <div class="expense-details"> <!-- Detalles del gasto -->
+                                            <h3>Almuerzo restaurante</h3> <!-- Descripción del gasto -->
+                                            <p class="expense-date">15 de Octubre, 2024</p> <!-- Fecha del gasto -->
+                                        </div>
+                                    </div>
+                                    <div class="expense-amount">-$45.000</div> <!-- Monto del gasto con signo negativo -->
+                                </div>
+                                
+                                <div class="expense-item"> <!-- Segundo elemento de gasto -->
+                                    <div class="expense-info"> <!-- Información del segundo gasto -->
+                                        <div class="expense-category transporte">🚌</div> <!-- Icono de transporte -->
+                                        <div class="expense-details"> <!-- Detalles del segundo gasto -->
+                                            <h3>Transporte público</h3> <!-- Descripción del transporte -->
+                                            <p class="expense-date">14 de Octubre, 2024</p> <!-- Fecha del segundo gasto -->
+                                        </div>
+                                    </div>
+                                    <div class="expense-amount">-$12.000</div> <!-- Monto del segundo gasto -->
+                                </div>
+                                
+                                <div class="expense-item"> <!-- Tercer elemento de gasto -->
+                                    <div class="expense-info"> <!-- Información del tercer gasto -->
+                                        <div class="expense-category vivienda">🏠</div> <!-- Icono de vivienda -->
+                                        <div class="expense-details"> <!-- Detalles del tercer gasto -->
+                                            <h3>Pago de servicios</h3> <!-- Descripción del pago de servicios -->
+                                            <p class="expense-date">13 de Octubre, 2024</p> <!-- Fecha del tercer gasto -->
+                                        </div>
+                                    </div>
+                                    <div class="expense-amount">-$180.000</div> <!-- Monto del tercer gasto -->
+                                </div>
+                                
+                                <div class="expense-item"> <!-- Cuarto elemento de gasto -->
+                                    <div class="expense-info"> <!-- Información del cuarto gasto -->
+                                        <div class="expense-category entretenimiento">🎬</div> <!-- Icono de entretenimiento -->
+                                        <div class="expense-details"> <!-- Detalles del cuarto gasto -->
+                                            <h3>Cine con amigos</h3> <!-- Descripción del entretenimiento -->
+                                            <p class="expense-date">12 de Octubre, 2024</p> <!-- Fecha del cuarto gasto -->
+                                        </div>
+                                    </div>
+                                    <div class="expense-amount">-$25.000</div> <!-- Monto del cuarto gasto -->
+                                </div>
+                                
+                                <div class="expense-item"> <!-- Quinto elemento de gasto -->
+                                    <div class="expense-info"> <!-- Información del quinto gasto -->
+                                        <div class="expense-category salud">💊</div> <!-- Icono de salud -->
+                                        <div class="expense-details"> <!-- Detalles del quinto gasto -->
+                                            <h3>Medicamentos</h3> <!-- Descripción del gasto médico -->
+                                            <p class="expense-date">11 de Octubre, 2024</p> <!-- Fecha del quinto gasto -->
+                                        </div>
+                                    </div>
+                                    <div class="expense-amount">-$68.000</div> <!-- Monto del quinto gasto -->
+                                </div>
+                            </div>
+                            
+                            <div class="card-footer"> <!-- Pie de la tarjeta de gastos -->
+                                <button class="btn-secondary">Ver todos los gastos</button> <!-- Botón para ver más gastos -->
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </main>
+        
+        <footer> <!-- Pie de página semántico -->
+            <div class="footer-content"> <!-- Contenido del pie de página -->
+                <p>&copy; 2024 GastoControl. Todos los derechos reservados.</p> <!-- Copyright de la aplicación -->
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html> <!-- Define el documento como HTML5 -->
+<html lang="es"> <!-- Elemento raíz con idioma español -->
+<head> <!-- Sección de metadatos del documento -->
+    <meta charset="UTF-8"> <!-- Codificación UTF-8 para caracteres especiales -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Configuración responsive para móviles -->
+    <meta name="description" content="Crea tu cuenta gratuita en GastoControl y comienza a organizar tus gastos mensuales"> <!-- Descripción para SEO -->
+    <title>Registrarse - GastoControl</title> <!-- Título que aparece en la pestaña del navegador -->
+    <link rel="stylesheet" href="css/register.css"> <!-- Enlaza la hoja de estilos específica del registro -->
+</head>
+<script src="js/register.js"></script>
+<body> <!-- Cuerpo principal del documento -->
+    <div class="container"> <!-- Contenedor principal que centra el contenido -->
+        <header> <!-- Encabezado semántico de la página -->
+            <nav class="navbar"> <!-- Barra de navegación superior -->
+                <div class="logo"> <!-- Contenedor del logotipo -->
+                    <a href="index.html">GastoControl</a> <!-- Enlace al inicio con el nombre de la app -->
+                </div>
+                <div class="nav-links"> <!-- Enlaces de navegación -->
+                    <a href="login.html" class="btn-nav">Iniciar Sesión</a> <!-- Enlace al formulario de login -->
+                </div>
+            </nav>
+        </header>
+        
+        <main> <!-- Contenido principal de la página -->
+            <div class="register-container"> <!-- Contenedor específico para el formulario de registro -->
+                <div class="register-card"> <!-- Tarjeta que contiene el formulario -->
+                    <div class="card-header"> <!-- Encabezado de la tarjeta -->
+                        <h1>Crear Cuenta</h1> <!-- Título principal de la página -->
+                        <p>Únete a GastoControl y toma control de tus finanzas</p> <!-- Subtítulo explicativo -->
+                    </div>
+                    
+                    <form id="registerForm" action="#" method="POST" novalidate> <!-- Formulario de registro (cambiar action por endpoint real) -->
+                        <div class="form-group"> <!-- Contenedor para el campo de nombre completo -->
+                            <label for="nombre">Nombre Completo</label> <!-- Etiqueta asociada al input de nombre -->                    
+                            <input  type="text" id="nombre" name="nombre" required aria-required="true" minlength="2" maxlength="50" pattern="[A-Za-zÀ-ÿ\u00f1\u00d1\s]+" placeholder="Ingresa tu nombre completo" autocomplete="name" >
+                            <!-- input
+                            <!--    type="text" <!-- Tipo texto para nombres -->
+                              <!--  id="nombre" <!-- Identificador único del elemento -->
+                              <!--  name="nombre" <!-- Nombre del campo para envío al servidor -->
+                               <!-- required <!-- Campo obligatorio -->
+                               <!-- aria-required="true" <!-- Atributo de accesibilidad -->
+                               <!-- minlength="2" <!-- Longitud mínima de 2 caracteres -->
+                               <!-- maxlength="50" <!-- Longitud máxima de 50 caracteres -->
+                                <!--pattern="[A-Za-zÀ-ÿ\u00f1\u00d1\s]+" <!-- Patrón que permite letras, acentos, ñ y espacios -->
+                                <!--placeholder="Ingresa tu nombre completo" <!-- Texto de ayuda dentro del input -->
+                                <!--autocomplete="name" <!-- Ayuda al navegador a autocompletar -->
+                           <!-- >
+                        </div>
+                        
+                        <div class="form-group"> <!-- Contenedor para el campo de email -->
+                            <label for="email">Correo Electrónico</label> <!-- Etiqueta asociada al input de email -->
+                            <input type="email" id="email" name="email" required aria-required="true" placeholder="ejemplo@correo.com" autocomplete="email"
+                            <!--<input 
+                                <!--type="email" <!-- Tipo email para validación automática -->
+                               <!-- id="email" <!-- Identificador único del elemento -->
+                               <!-- name="email" <!-- Nombre del campo para envío al servidor -->
+                               <!-- required <!-- Campo obligatorio -->
+                               <!-- aria-required="true" <!-- Atributo de accesibilidad -->
+                                <!--placeholder="ejemplo@correo.com" <!-- Texto de ayuda dentro del input -->
+                                <!--autocomplete="email" <!-- Ayuda al navegador a autocompletar -->
+                           <!-- >
+                        </div>
+                        
+                        <div class="form-row"> <!-- Fila que contiene dos campos lado a lado -->
+                            <div class="form-group"> <!-- Contenedor para el campo de contraseña -->
+                                <label for="password">Contraseña</label> <!-- Etiqueta asociada al input de contraseña -->
+                                <input type="password" id="password" name="password" required aria-required="true" minlength="8" pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}" placeholder="Mínimo de 8 caracteres" autocomplete="new-password" >
+                        
+                                <!--<input 
+                                   <!-- type="password"  Tipo password para ocultar el texto -->
+                                   <!-- id="password" <!-- Identificador único del elemento -->
+                                   <!-- name="password" <!-- Nombre del campo para envío al servidor -->
+                                    <!--required <!-- Campo obligatorio -->
+                                    <!--aria-required="true" <!-- Atributo de accesibilidad -->
+                                    <!--minlength="8" <!-- Longitud mínima de 8 caracteres -->
+                                    <!--pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}" <!-- Patrón que requiere mayúscula, minúscula y número -->
+                                    <!--placeholder="Mínimo 8 caracteres" <!-- Texto de ayuda dentro del input -->
+                                    <!--autocomplete="new-password" <!-- Indica que es una nueva contraseña -->
+                                <!-->
+                            </div>
+                            
+                            <div class="form-group"> <!-- Contenedor para confirmar contraseña -->
+                                <label for="confirm_password">Confirmar Contraseña</label> <!-- Etiqueta para confirmar contraseña -->
+                               <input type="password" id="confirm_password" name="confirm_password" required area-required="true" minlength="8" placeholder="Repite tu contraseña" autocomplete="new-password"
+                                <!--<input 
+                                   <!-- type="password" <!-- Tipo password para ocultar el texto -->
+                                    <!--id="confirm_password" <!-- Identificador único del elemento -->
+                                    <!--name="confirm_password" <!-- Nombre del campo para envío al servidor -->
+                                    <!--required <!-- Campo obligatorio -->
+                                    <!--aria-required="true" <!-- Atributo de accesibilidad -->
+                                    <!--minlength="8" <!-- Longitud mínima de 8 caracteres -->
+                                    <!--placeholder="Repite tu contraseña" <!-- Texto de ayuda dentro del input -->
+                                    <!--autocomplete="new-password" <!-- Indica que es confirmación de nueva contraseña -->
+                               <!-- >
+                            </div>
+                        </div>
+                        
+                        <div class="form-group"> <!-- Contenedor para el campo de teléfono opcional -->
+                            <label for="telefono">Teléfono (Opcional)</label> <!-- Etiqueta asociada al input de teléfono -->
+                            <input type="tel" id="telefono" name="telefono" pattern="[0-9+\-\s\(\)]+" placeholder="+57 300 123 4567" autocomplete="tel"
+                            <!--<input 
+                                <!--type="tel" <!-- Tipo teléfono para formato adecuado en móviles -->
+                                <!--id="telefono" <!-- Identificador único del elemento -->
+                                <!--name="telefono" <!-- Nombre del campo para envío al servidor -->
+                                <!--pattern="[0-9+\-\s\(\)]+" <!-- Patrón que permite números, +, -, espacios y paréntesis -->
+                                <!--placeholder="+57 300 123 4567" <!-- Ejemplo de formato de teléfono -->
+                               <!-- autocomplete="tel" <!-- Ayuda al navegador a autocompletar -->
+                            <!-->
+                        </div>
+                        
+                        <div class="form-group checkbox-group"> <!-- Contenedor para el checkbox de términos -->
+                           <input type="checkbox" id="terminos" name="terminos" required aria-required="true" >
+                           <label for="terminos">Acepto los <a href="#" target="_blank">términos y condiciones</a> y la <a href="#" target="_blank">política de privacidad</a></label> <!-- Etiqueta con enlaces a términos -->
+                            <!-- <input 
+                               <!-- type="checkbox" <!-- Tipo checkbox para aceptación -->
+                                <!--id="terminos" <!-- Identificador único del elemento -->
+                               <!-- name="terminos" <!-- Nombre del campo para envío al servidor -->
+                                <!--required <!-- Campo obligatorio -->
+                               <!-- aria-required="true" <!-- Atributo de accesibilidad -->
+                            <!-->
+                           <!-- <label for="terminos">Acepto los <a href="#" target="_blank">términos y condiciones</a> y la <a href="#" target="_blank">política de privacidad</a></label> <!-- Etiqueta con enlaces a términos -->
+                        </div>
+                        
+                        <div class="form-group"> <!-- Contenedor para el botón de envío -->
+                            <button type="submit" class="btn-primary">Crear Cuenta</button> <!-- Botón para enviar el formulario -->
+                        </div>
+                    </form>
+                    
+                    <div class="card-footer"> <!-- Pie de la tarjeta -->
+                        <p>¿Ya tienes cuenta? <a href="login.html">Inicia sesión aquí</a></p> <!-- Enlace a la página de login -->
+                    </div>
+                </div>
+            </div>
+        </main>
+        
+        <footer> <!-- Pie de página semántico -->
+            <div class="footer-content"> <!-- Contenido del pie de página -->
+                <p>&copy; 2024 GastoControl. Todos los derechos reservados.</p> <!-- Copyright de la aplicación -->
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
